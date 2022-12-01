@@ -92,16 +92,57 @@ checkUpperCase('HASa')
 //------------------- bai1----------------------------
 function hinhCau(R) {
     let pi = 3.14
-    return 4 / 3 * pi*R*R*R
+    return 4 / 3 * pi * R * R * R
 }
 console.log(hinhCau(1))
 
 //------------------- bai2----------------------------
-function sumBetween(start,end){
-    
-    let n=end-start+1
-    let sum=(start+end)*n/2-start-end
+function sumBetween(start, end) {
+
+    let n = end - start + 1
+    let sum = (start + end) * n / 2 - start - end
     console.log(sum)
 }
-sumBetween(3,8)
+sumBetween(3, 8)
 //------------------- bai3----------------------------
+function checkSNT(n) {
+    var check;
+    
+    if (n < 2) {
+        check = false;
+    }
+    if (n == 2) {
+        check = true;
+    }
+    if (n > 2) {
+        var sqrt = Math.sqrt(n);
+        var count = 0;
+        for (var i = 2; i <= sqrt; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+    }
+    if (count == 0) {
+        check = true;
+    } else {
+        check = false;
+    }
+    if (check == true) {
+        return true
+    } else return false
+}
+checkSNT(13)
+//------------------- bai4----------------------------
+
+function sumSNT(a){
+    let sum=0;
+    for(let i=1;i<=a;i++){
+        if(checkSNT(i)==true){
+            sum+=i;
+        }
+    }
+    console.log(sum);
+    
+}
+sumSNT(2)
