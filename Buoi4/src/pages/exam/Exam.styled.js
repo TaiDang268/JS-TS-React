@@ -89,7 +89,7 @@ export const NextPrev = styled.div`
     background-color:#4e4242;
     position: relative;
     top:400px;
-    left:60px;
+    left:-72px;
     font-weight:bold;
     border-radius: 40px;
   cursor: pointer;
