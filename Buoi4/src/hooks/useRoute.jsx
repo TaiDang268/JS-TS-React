@@ -1,12 +1,15 @@
 import { useRoutes } from "react-router-dom";
 import Login from "../pages/login/Login";
-const useRoute=()=>{
-    const elements=useRoutes([
-        {path: "/login", element: <Login /> },
-        
-    ])
+import DashBoard from "../pages/dashboard/DashBoard";
+import Exam from "../pages/exam/Exam";
+const useRoute = () => {
+  const elements = useRoutes([
+    { path: "/login", element: <Login /> },
+    { path: "/dashboard", element: <DashBoard /> },
+    { path: "/exam", element: <Exam /> },
+  ]);
 
-    return elements;
-}
+  return elements;
+};
 
 export default useRoute;
