@@ -1,0 +1,83 @@
+.ExamFinishContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .BodyPage {
+        width: 1041px;
+        height: 442px;
+        background: #d9d9d9;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        background-color: #d9d9d9;
+        .QuestionTilte {
+            flex: 1;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 29px;
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+        }
+        .Infor {
+            flex: 2;
+            display: flex;
+            span {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 29px;
+                padding-left: 25px;
+            }
+            .InforPoint {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .TotalPoint {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .TotalPointText {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 29px;
+                }
+            }
+        }
+
+        .DashBoard {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+
+            .DashBoardBtn {
+                width: 233px;
+                height: 82px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 29px;
+
+                color: #000000;
+                background-color: #9f9d9f;
+                border-radius: 41px;
+            }
+        }
+    }
+}

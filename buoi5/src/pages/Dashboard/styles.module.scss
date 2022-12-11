@@ -1,0 +1,147 @@
+.containerPage {
+    display: flex;
+    height: 100vh;
+    @media only screen and (max-width: 600px) {
+        display: block;
+    }
+    .header {
+        display: none;
+        width: 100%;
+        height: 65px;
+        background: #545151;
+        @media only screen and (max-width: 600px) {
+            display: block;
+        }
+        .title {
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .showSideBar {
+            display: block !important;
+            position: absolute;
+            top: 0px;
+            height: 100vh;
+        }
+    }
+    .sideBar {
+        flex: 2;
+        background-color: #f5f5f5;
+        border-right: 1px solid rgb(148, 143, 143);
+
+        .sideBarTop {
+            height: 50%;
+            img {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                margin-top: 30px;
+            }
+            .textInfor {
+                font-weight: bold;
+                span {
+                    display: block;
+                    text-align: left;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .sideBarBottom {
+            height: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            .logoutBtn {
+                background-color: #d9d9d9;
+                border: 1px solid #000000;
+                border-radius: 4px;
+                padding: 10px 25px;
+                text-transform: uppercase;
+                margin-bottom: 40px;
+            }
+        }
+    }
+    .bodyPage {
+        flex: 10;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        .navbar {
+            flex: 2;
+            display: flex;
+            .navbarWithSearch {
+                display: flex;
+                width: 1000px;
+                height: 72px;
+                margin: 41px 41px;
+
+                border: 1px solid #000000;
+                border-radius: 2px;
+                input {
+                    height: 95%;
+                    width: 90%;
+                    border: none;
+                    outline: none;
+                    padding-left: 20px;
+                    background-color: #ecf6f7;
+                }
+                .searchIcon {
+                    height: 100%;
+                    width: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: 38px;
+                        height: 38px;
+                    }
+                }
+            }
+            .optionSelect {
+                display: flex;
+                width: 340px;
+                height: 72px;
+                background-color: #99afa0;
+                margin: 41px 41px;
+                border: 1px solid #000000;
+                justify-content: space-between;
+                align-items: center;
+                .textOption {
+                    margin: 0 30px;
+                    font-size: 18px;
+                }
+                .iconOption {
+                    height: 29.5px;
+                    width: 45.5px;
+                    margin: 0 30px;
+                }
+            }
+        }
+        .listQuiz {
+            flex: 9;
+            background: #d9d9d9;
+            border-radius: 4px;
+            padding: 10px 100px;
+            margin: 0px 35px;
+            display: flex;
+            flex-wrap: wrap;
+            .boxQuiz {
+                height: 120px;
+                flex-basis: 45%;
+                margin: 20px;
+                padding: 10px 0;
+            }
+        }
+        .pagination {
+            flex: 1;
+            background-color: gray;
+        }
+    }
+}
