@@ -7,19 +7,19 @@ const DetailQuestion = (props) => {
         <div className={styles.QuestionContainer}>
             <div className={styles.Question}>{`Câu ${index}: ` + question}</div>
             <div className={styles.Answer}>
-                <div className={styles.answer}>
+                <div className={styles.AnswerItem}>
                     <input type="checkbox" name="" id="" />
                     <span>{answerA}</span>
                 </div>
-                <div className={styles.answer}>
+                <div className={styles.AnswerItem}>
                     <input type="checkbox" name="" id="" />
                     <span>{answerB}</span>
                 </div>
-                <div className={styles.answer}>
+                <div className={styles.AnswerItem}>
                     <input type="checkbox" name="" id="" />
                     <span>{answerC}</span>
                 </div>
-                <div className={styles.answer}>
+                <div className={styles.AnswerItem}>
                     <input type="checkbox" name="" id="" />
                     <span>{answerD}</span>
                 </div>

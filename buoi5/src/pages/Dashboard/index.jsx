@@ -8,30 +8,30 @@ import InfoCardTest from '../../components/InfoCardTest';
 
 const fakeData = {
     listTest: [
-        { title: '1 Kiem tra danh gia nang luc ', timeTest: '1', point: 10, maxPoint: 250, starNumber: 4 },
-        { title: '2 Kiem tra danh gia nang luc ', timeTest: '2', point: 20, maxPoint: 250, starNumber: 3 },
-        { title: '3 Kiem tra danh gia nang luc ', timeTest: '3', point: 30, maxPoint: 250, starNumber: 5 },
-        { title: '4 Kiem tra danh gia nang luc ', timeTest: '4', point: 40, maxPoint: 250, starNumber: 4 },
-        { title: '5 Kiem tra danh gia nang luc ', timeTest: '5', point: 50, maxPoint: 250, starNumber: 4 },
-        { title: '6 Kiem tra danh gia nang luc ', timeTest: '6', point: 60, maxPoint: 250, starNumber: 4 },
+        { title: ' Kiem tra danh gia nang luc 1 ', timeTest: '1', point: 10, maxPoint: 250, starNumber: 1 },
+        { title: ' Kiem tra danh gia nang luc 2', timeTest: '2', point: 20, maxPoint: 250, starNumber: 2 },
+        { title: ' Kiem tra danh gia nang luc 3', timeTest: '3', point: 30, maxPoint: 250, starNumber: 3 },
+        { title: ' Kiem tra danh gia nang luc 4', timeTest: '4', point: 40, maxPoint: 250, starNumber: 4 },
+        { title: ' Kiem tra danh gia nang luc 5', timeTest: '5', point: 50, maxPoint: 250, starNumber: 5 },
+        { title: ' Kiem tra danh gia nang luc 6', timeTest: '6', point: 60, maxPoint: 250, starNumber: 6 },
         // { title: '7 Kiem tra danh gia nang lucg ', timeTest: '', point: 70, maxPoint: 250, starNumber: 4 },
         // { title: '8 Kiem tra danh gia nang lung ', timeTest: '', point: 80, maxPoint: 250, starNumber: 4 },
     ],
 };
 
 const Dashboard = () => {
-    const [showSidebar, setShowSidebar] = useState(false);
     return (
         <div className={styles.containerPage}>
-            <div className={styles.header}>
+            {/* <div className={styles.header}>
                 <button onClick={() => setShowSidebar(true)}>click</button>
                 <span>Dashboard</span>
-            </div>
+            </div> */}
             <div
-                className={classnames(styles.sideBar, {
-                    [styles.showSideBar]: showSidebar,
-                    [styles.hidden]: !showSidebar,
-                })}
+                className={styles.sideBar}
+                // className={classnames(styles.sideBar, {
+                //     [styles.showSideBar]: showSidebar,
+                //     [styles.hidden]: !showSidebar,
+                // })}
             >
                 <div className={styles.sideBarTop}>
                     <div className={styles.image}>

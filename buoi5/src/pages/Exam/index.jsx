@@ -12,15 +12,18 @@ const Exam = () => {
                 <div className={styles.BodyExamBottom}>
                     <div className={styles.QuestionItem}>
                         <DetailQuestion
-                            question="dsdsdvb"
-                            answerA="sdasd"
-                            answerB="asdas"
-                            answerC="asdas"
-                            answerD="asdas"
+                            question="Nhân viên chính thức của công ty Amela được nghỉ phép (có hưởng lương) bao nhiêu ngày một năm ?"
+                            answerA="A.12 ngày nếu làm đủ cả năm"
+                            answerB="B.16 ngày nếu làm đủ cả năm"
+                            answerC="C.Không có nghỉ phép vẫn hưởng lương"
+                            answerD="D.8 ngày nếu làm đủ cả năm"
                             index={1}
                         />
                     </div>
-                    <div className={styles.TranferQuestiom}></div>
+                    <div className={styles.TranferQuestion}>
+                        <button className={styles.BeforeQuestion}>CÂU TRƯỚC</button>
+                        <button className={styles.AfterQuestion}>CÂU SAU</button>
+                    </div>
                 </div>
             </div>
 

@@ -1,0 +1,36 @@
+.Question {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.Answer {
+    .AnswerItem {
+        display: flex;
+        align-items: center;
+        input {
+            width: 36px;
+            height: 36px;
+            background: #d9d9d9;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            margin-left: 20px;
+        }
+        span {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+            display: flex;
+            align-items: center;
+            color: #000000;
+            margin-left: 20px;
+        }
+    }
+}
