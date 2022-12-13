@@ -1,6 +1,40 @@
 import styles from './styles.module.scss';
 import { images } from '../../assets';
+import { useState } from 'react';
+import isEmpty from 'validator/lib/isEmpty';
 const Login = () => {
+    const Acounts = [
+        { id: 1, username: 'taidang268@gmail.com', password: '1234' },
+        { id: 2, username: '', password: '' },
+        { id: 3, username: '', password: '' },
+    ];
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [validation, setValidation] = useState('');
+    const validateAll = () => {
+        const message = {};
+        if (isEmpty(username)) {
+            message.username = 'Please enter a username';
+        }
+        if (isEmpty(password)) {
+            message.password = 'Please enter a password';
+        }
+        setValidation(message);
+        if (Object.keys(message).length > 0) return false;
+        return true;
+    };
+    const handleOnChangeUsername = (event) => {
+        const value = event.target.value;
+        setUsername(value);
+    };
+    const handleOnChangePassword = (event) => {
+        const value = event.target.value;
+        setPassword(value);
+    };
+    const handleSubmitLogin = (e) => {
+        const isValidate = validateAll();
+        if (!isValidate) return;
+    };
     return (
         <div className={styles.LoginContainer}>
             <img className={styles.LoginContainerImg} src={images.bg} alt="" />
@@ -12,22 +46,36 @@ const Login = () => {
                     <div className={styles.UsernameImg}>
                         <img src={images.usernameIcon} alt="" />
                     </div>
-                    <input className={styles.UsernameInput} type="text" placeholder="Username" />
+                    <input
+                        className={styles.UsernameInput}
+                        type="text"
+                        onChange={handleOnChangeUsername}
+                        placeholder="Username"
+                    />
                 </div>
+                <span className={styles.TextWarning}>{validation.username}</span>
 
                 <div className={styles.PasswordContainer}>
                     <div className={styles.PasswordImg}>
                         <img src={images.passwordIcon} alt="" />
                     </div>
-                    <input className={styles.PasswordInput} type="text" placeholder="Password" />
+                    <input
+                        className={styles.PasswordInput}
+                        type="text"
+                        onChange={handleOnChangePassword}
+                        placeholder="Password"
+                    />
                 </div>
+                <span className={styles.TextWarning}>{validation.password}</span>
 
                 <div className={styles.RememberContainer}>
                     <input type="checkbox" name="" id="" />
                     <span className={styles.RememberText}>Remember me</span>
                 </div>
                 <div className={styles.LoginBtnContainer}>
-                    <button>LOGIN</button>
+                    <button type="submit" onClick={handleSubmitLogin}>
+                        LOGIN
+                    </button>
                 </div>
             </div>
         </div>

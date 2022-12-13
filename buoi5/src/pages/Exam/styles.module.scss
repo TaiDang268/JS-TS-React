@@ -15,10 +15,29 @@
             flex-direction: column;
             align-items: flex-start;
             span {
-                margin: 8px 20px;
+                margin: 6px 20px;
             }
             .TextQuestion {
-                font-weight: bold;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 29px;
+                display: flex;
+                align-items: center;
+
+                color: #000000;
+            }
+            .TextTime {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
+                display: flex;
+                align-items: center;
+
+                color: #000000;
             }
         }
         .BodyExamBottom {
@@ -47,7 +66,7 @@
                     font-weight: 700;
                     font-size: 20px;
                     line-height: 24px;
-
+                    cursor: pointer;
                     color: #000000;
                 }
             }
@@ -74,6 +93,10 @@
                 font-size: 20px;
                 line-height: 24px;
                 margin: 10px 5px;
+                cursor: pointer;
+            }
+            .ActiveColor {
+                background-color: #92fd9d;
             }
         }
         .SubmitContainer {
@@ -90,6 +113,7 @@
                 font-weight: 700;
                 font-size: 24px;
                 line-height: 29px;
+                cursor: pointer;
             }
         }
     }

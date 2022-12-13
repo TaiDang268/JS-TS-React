@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import SearchIcon from '../../assets/images/searchIcon.png';
 import vector from '../../assets/images/Vector 1.png';
 import styles from './styles.module.scss';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 
 import InfoCardTest from '../../components/InfoCardTest';
 

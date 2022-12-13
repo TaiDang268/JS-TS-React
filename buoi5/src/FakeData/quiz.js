@@ -1,0 +1,61 @@
+const fakeExam = {
+    listExams: [
+        {
+            id: 1,
+            question: 'Nhân viên chính thức của công ty Amela được1',
+            answerA: 1,
+            answerB: 2,
+            answerC: 3,
+            answerD: 4,
+        },
+        {
+            id: 2,
+            question: 'Nhân viên chính thức của công ty Amela được2',
+            answerA: 5,
+            answerB: 6,
+            answerC: 7,
+            answerD: 8,
+        },
+        {
+            id: 3,
+            question: 'Nhân viên chính thức của công ty Amela được3',
+            answerA: 9,
+            answerB: 10,
+            answerC: 11,
+            answerD: 12,
+        },
+        {
+            id: 4,
+            question: 'Nhân viên chính thức của công ty Amela được4',
+            answerA: 1,
+            answerB: 2,
+            answerC: 3,
+            answerD: 4,
+        },
+        {
+            id: 5,
+            question: 'Nhân viên chính thức của công ty Amela được',
+            answerA: 1,
+            answerB: 2,
+            answerC: 3,
+            answerD: 4,
+        },
+        {
+            id: 6,
+            question: 'Nhân viên chính thức của công ty Amela được',
+            answerA: 1,
+            answerB: 2,
+            answerC: 3,
+            answerD: 4,
+        },
+        {
+            id: 7,
+            question: 'Nhân viên chính thức của công ty Amela được',
+            answerA: 1,
+            answerB: 2,
+            answerC: 3,
+            answerD: 4,
+        },
+    ],
+};
+export default fakeExam;
