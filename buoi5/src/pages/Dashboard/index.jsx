@@ -2,9 +2,12 @@
 import SearchIcon from '../../assets/images/searchIcon.png';
 import vector from '../../assets/images/Vector 1.png';
 import styles from './styles.module.scss';
+import { useNavigate } from 'react-router-dom';
+
 // import classnames from 'classnames';
 
 import InfoCardTest from '../../components/InfoCardTest';
+import { images } from '../../assets';
 
 const fakeData = {
     listTest: [
@@ -20,6 +23,11 @@ const fakeData = {
 };
 
 const Dashboard = () => {
+    const navigate = useNavigate();
+
+    const handelClickInfoCardTest = (e) => {
+        navigate('/exam');
+    };
     return (
         <div className={styles.containerPage}>
             {/* <div className={styles.header}>
@@ -68,18 +76,31 @@ const Dashboard = () => {
                 </div>
                 <div className={styles.listQuiz}>
                     {fakeData.listTest.map((item, index) => (
-                        <div key={index} className={styles.boxQuiz}>
+                        <div key={index} className={styles.boxQuiz} onClick={handelClickInfoCardTest}>
                             <InfoCardTest
                                 title={item.title}
                                 timeTest={item.timeTest}
                                 point={item.point}
                                 maxPoint={item.maxPoint}
                                 starNumber={item.starNumber}
+                                // onclick={handelClickInfoCardTest}s
                             />
                         </div>
                     ))}
                 </div>
-                <div className={styles.pagination}></div>
+                <div className={styles.pagination}>
+                    <button className={styles.BeforeBtn}>
+                        <img src={images.leftArrowIcon} alt="" />
+                    </button>
+                    <button className={styles.NumberBtn}>1</button>
+                    <button className={styles.NumberBtn}>2</button>
+                    <button className={styles.NumberBtn}>...</button>
+                    <button className={styles.NumberBtn}>9</button>
+                    <button className={styles.NumberBtn}>10</button>
+                    <button className={styles.AfterBtn}>
+                        <img src={images.rightArrowIcon} alt="" />
+                    </button>
+                </div>
             </div>
         </div>
     );

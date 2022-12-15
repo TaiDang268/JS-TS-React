@@ -2,6 +2,7 @@ import styles from './styles.module.scss';
 import DetailQuestion from '../../components/DetailQuestion';
 // import fakeExam from '../../FakeData/quiz';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const listExams = [
     {
@@ -62,6 +63,7 @@ const listExams = [
     },
 ];
 const Exam = () => {
+    const navigate = useNavigate();
     const lengthQuestion = listExams.length;
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
@@ -74,12 +76,16 @@ const Exam = () => {
     const handleAfterBtn = () => {
         if (currentQuestion < lengthQuestion - 1) {
             setCurrentQuestion(currentQuestion + 1);
-        }
+        } else if (currentQuestion === lengthQuestion - 1) setCurrentQuestion(0);
     };
     const handleClickQuestionNumber = (e) => {
         let idQuestion = e.target.id;
         setCurrentQuestion(idQuestion - 1);
     };
+    const handleClickSubmit = () => {
+        navigate('/examfinish');
+    };
+    
 
     return (
         <div className={styles.ExamContainer}>
@@ -87,6 +93,7 @@ const Exam = () => {
                 <div className={styles.BodyExamTop}>
                     <span className={styles.TextQuestion}>Kiểm tra an toàn bảo mật thông tin lần 2</span>
                     <span className={styles.TextTime}>Còn lại :14 phút 22 giây</span>
+                    <div className={styles.CountDown}></div>
                 </div>
 
                 <div className={styles.BodyExamBottom}>
@@ -123,7 +130,9 @@ const Exam = () => {
                     ))}
                 </div>
                 <div className={styles.SubmitContainer}>
-                    <button className={styles.SubmitBtn}>Nộp bài</button>
+                    <button className={styles.SubmitBtn} onClick={handleClickSubmit}>
+                        Nộp bài
+                    </button>
                 </div>
             </div>
         </div>

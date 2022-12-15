@@ -39,6 +39,21 @@
 
                 color: #000000;
             }
+            .CountDown {
+                width: 95%;
+                height: 20px;
+                margin-left: 20px;
+                background-color: #36e347;
+                animation: progress-animation 5s;
+            }
+            @keyframes progress-animation {
+                100% {
+                    width: 0%;
+                }
+                0% {
+                    width: 95%;
+                }
+            }
         }
         .BodyExamBottom {
             flex: 5;

@@ -6,6 +6,8 @@ import bg from './images/bg-login.jpg';
 import cameraIcon from './images/camera-icon.png';
 import usernameIcon from './images/username.png';
 import passwordIcon from './images/icon password.png';
+import leftArrowIcon from './images/left-arrow.png';
+import rightArrowIcon from './images/right-arrow.png';
 
 export const images = {
     clockIcon,
@@ -16,4 +18,6 @@ export const images = {
     cameraIcon,
     usernameIcon,
     passwordIcon,
+    leftArrowIcon,
+    rightArrowIcon,
 };
