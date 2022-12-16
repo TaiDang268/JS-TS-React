@@ -85,6 +85,7 @@ const endOfMonth = (now: Date): string => {
 console.log(endOfMonth(new Date(2022, 9, 15)));
 
 // Bai9
+
 // Bai10
 const increaseTime = (timeBegin: string, numberTime: number): string => {
   const arrTimeBegin = timeBegin.split(":");

@@ -3,6 +3,7 @@ import DetailQuestion from '../../components/DetailQuestion';
 // import fakeExam from '../../FakeData/quiz';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const listExams = [
     {
@@ -63,6 +64,22 @@ const listExams = [
     },
 ];
 const Exam = () => {
+    const totalaMinute = 8;
+    const totalSecond = 0;
+
+    const [minute, setMinute] = useState(totalaMinute);
+    const [second, setSecond] = useState(totalSecond);
+    useEffect(() => {
+        const handleCountDownTime = setInterval(() => {
+            if (second === 0) {
+                setMinute((prev) => prev - 1);
+                setSecond(60);
+            }
+            setSecond((prev) => prev - 1);
+        }, 1000);
+        return () => clearInterval(handleCountDownTime);
+    }, [second]);
+
     const navigate = useNavigate();
     const lengthQuestion = listExams.length;
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -85,14 +102,15 @@ const Exam = () => {
     const handleClickSubmit = () => {
         navigate('/examfinish');
     };
-    
 
     return (
         <div className={styles.ExamContainer}>
             <div className={styles.BodyExam}>
                 <div className={styles.BodyExamTop}>
                     <span className={styles.TextQuestion}>Kiểm tra an toàn bảo mật thông tin lần 2</span>
-                    <span className={styles.TextTime}>Còn lại :14 phút 22 giây</span>
+                    <span className={styles.TextTime}>
+                        Còn lại :{minute} phút {second} giây
+                    </span>
                     <div className={styles.CountDown}></div>
                 </div>
 
