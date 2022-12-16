@@ -82,10 +82,20 @@ const endOfMonth = (now: Date): string => {
     date.getFullYear()
   );
 };
-
-let dt = new Date(2022, 9, 15);
-
-console.log(endOfMonth(dt));
-
+console.log(endOfMonth(new Date(2022, 9, 15)));
 
 // Bai9
+// Bai10
+const increaseTime = (timeBegin: string, numberTime: number): string => {
+  const arrTimeBegin = timeBegin.split(":");
+  const totalSecondBegin =
+    parseInt(arrTimeBegin[0]) * 60 * 60 +
+    parseInt(arrTimeBegin[1]) * 60 +
+    parseInt(arrTimeBegin[2]);
+  const totalSecondEnd = totalSecondBegin + numberTime;
+  const hour = Math.floor(totalSecondEnd / 3600);
+  const minute = Math.floor((totalSecondEnd - hour * 3600) / 60);
+  const second = totalSecondEnd - hour * 3600 - minute * 60;
+  return hour + ":" + minute + ":" + second;
+};
+console.log(increaseTime("9:20:56", 7));
