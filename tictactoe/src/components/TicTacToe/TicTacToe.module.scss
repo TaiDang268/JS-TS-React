@@ -1,0 +1,18 @@
+.gameBoard {
+  margin: 25px;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.gameCell {
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

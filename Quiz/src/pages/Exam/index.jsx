@@ -64,10 +64,11 @@ const listExams = [
     },
 ];
 const Exam = () => {
-    const totalaMinute = 8;
+    const totalMinute = 8;
     const totalSecond = 0;
+    const totalTime=totalMinute*60+totalSecond;
 
-    const [minute, setMinute] = useState(totalaMinute);
+    const [minute, setMinute] = useState(totalMinute);
     const [second, setSecond] = useState(totalSecond);
     useEffect(() => {
         const handleCountDownTime = setInterval(() => {
