@@ -3,9 +3,9 @@
   width: 500px;
   height: 500px;
   display: grid;
-  border: 1px solid black;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  grid-gap: 25px;
 }
 
 .gameCell {
@@ -15,4 +15,6 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  font-size: 80px;
+  box-shadow: 0px 10px 20px rgb(226, 200, 200);
 }

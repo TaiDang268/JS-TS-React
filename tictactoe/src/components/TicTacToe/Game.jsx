@@ -9,15 +9,18 @@ const Game = () => {
   const handleClick = (index) => {
     const boardCopy = [...board];
     if (winner || boardCopy[index]) return;
-    boardCopy[index] = xIsNext ? "x" : "o";
+    boardCopy[index] = xIsNext ? "X" : "O";
     setBoard(boardCopy);
-    setXIsNext(!xIsNext);
+    setXIsNext((xIsNext) => !xIsNext);
+  };
+  const handleResetGame = () => {
+    setBoard(Array(9).fill(null));
   };
   return (
     <div>
       <Board cells={board} onClick={handleClick}></Board>
-      
-      {winner}
+      <div>Winner : {winner}</div>
+      <button onClick={handleResetGame}>Reset Game</button>
     </div>
   );
 };
