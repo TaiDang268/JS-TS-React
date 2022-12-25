@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button, Input, Form } from 'antd';
 import styled from 'styled-components';
 export const LoginContainer = styled.div`
     width: 100vw;
@@ -10,7 +10,7 @@ export const LoginContainer = styled.div`
     background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
     font-family: 'work sans';
 `;
-export const FormLogin = styled.div`
+export const FormLogin = styled(Form)`
     max-width: 500px;
     min-width: 300px;
     max-height: 700px;
@@ -61,7 +61,12 @@ export const UserNameInput = styled.input`
         opacity: 0;
     }
 `;
-
+export const UserNameWarning = styled.span`
+    color: red;
+`;
+export const PassWordWarning = styled.span`
+    color: red;
+`;
 export const PassWordContainer = styled.div`
     flex: 2;
     display: flex;
