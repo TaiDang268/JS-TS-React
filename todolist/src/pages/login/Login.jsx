@@ -19,6 +19,7 @@ import {
     ButtonCustom,
     UserNameWarning,
     PassWordWarning,
+    Register,
 } from './Login.styled';
 // import { Button } from 'antd';
 const Login = () => {
@@ -70,6 +71,7 @@ const Login = () => {
                     <PassWordInput placeholder="Enter Your Password" type="password" ref={password}></PassWordInput>
                     <PassWordWarning>{validation.password}</PassWordWarning>
                 </PassWordContainer>
+                <Register>Register</Register>
                 <RememberContainer></RememberContainer>
                 <LoginSubmit>
                     <ButtonCustom type="primary" shape="round" value="large" onClick={handleSubmit}>

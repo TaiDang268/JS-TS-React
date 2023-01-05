@@ -97,6 +97,9 @@ export const PassWordInput = styled.input`
         opacity: 0;
     }
 `;
+export const Register = styled.span`
+    display: 
+`;
 export const RememberContainer = styled.div`
     flex: 2;
 `;

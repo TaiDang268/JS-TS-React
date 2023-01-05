@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.App {
+  background-image: url(assets/images/borad.png);
+  height: 100vh;
+  object-fit: cover;
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-color: #928282;
+}

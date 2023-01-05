@@ -6,12 +6,12 @@ import Login from './pages/login/Login';
 function App() {
     const elements = useRoutes([
         {
-            path: '/taskdetail',
-            element: <TaskDetail />,
+            path: '/',
+            element: <Login />,
         },
         {
-            path: '/login',
-            element: <Login />,
+            path: '/taskdetail',
+            element: <TaskDetail />,
         },
     ]);
     return elements;
