@@ -1,5 +1,5 @@
 import { images } from "assets/images";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   width: 6em;
@@ -11,23 +11,28 @@ export const Container = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+const FlipAnimation = keyframes`
+  to {
+    transform: rotate(180deg);
+  }
+`;
+
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  /* border: 1px solid #fff; */
+
   transform-style: preserve-3d;
   transition: transform 2s;
+  transform: 2s;
   transition-timing-function: ease-in-out;
   transform: rotateY(
     ${(props: { flip: boolean }) => (props.flip ? "180deg" : "0")}
   );
 
-  /* &:hover{
-        transform: rotateY(180deg);
-        props.isFlip ? '180deg' : '0'
-        
-    } */
+  &:hover {
+    transform: rotateY(180deg);
+  }
 `;
 
 export const BackSide = styled.div`

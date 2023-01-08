@@ -6,7 +6,7 @@ import { ListUser } from "./listUser/ListUser";
 import { ICard } from "components/types/card.type";
 import { motion } from "framer-motion";
 import Card from "components/Card/Card";
-import { Button } from "antd";
+import { Button, Progress } from "antd";
 import styled from "styled-components";
 // eslint-disable-next-line
 import ReactCardFlip from "react-card-flip";
@@ -21,6 +21,7 @@ function App() {
     margin-left: 10px;
     font-weight: bold;
   `;
+
   const Wrapper = styled.div`
     width: 150px;
     height: 150px;
@@ -32,38 +33,24 @@ function App() {
     flex-direction: row;
     align-items: center;
   `;
+  const TimeFlipCard = styled.div`
+    width: 100%;
+    height: 10px;
+    background-color: green;
+  `;
   const MotionCard = motion(Card, { forwardMotionProps: true });
 
   const [isStart, setIsStart] = useState<boolean>(false);
   const [isFlipCard, setIsFlipCard] = useState<boolean>(false);
-  // const [isNewGame, setIsNewGame] = useState(false);
-  // const handleClick = (e: any) => {
-  //   e.preventDefault();
-  //   //  return (prevState => ({ isFlipped: !prevState.isFlipped }));
-  //   return !isFlipped;
-  // };
+
   const handleFlipCard = () => {
-    // setIsStart(false);
-    // setIsFlipCard(true);
-    if (isStart) {
-      setIsFlipCard(true);
-    }
+    setIsFlipCard(true);
   };
   const handleNewGame = () => {
     setIsStart(!isStart);
     setIsFlipCard(false);
-
-    // setIsFlipCard(false);
-    // setIsNewGame(!isNewGame);
   };
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsStart(true);
-  //   }, 2000);
-  //   setTimeout(() => {
-  //     setIsFlipCard(true);
-  //   }, 7000);
-  // }, []);
+
   const initAnimation = { x: "-50%", y: "-50%", opacity: 1 };
   const USER_ANIMATION_1 = {
     initial: initAnimation,
@@ -164,26 +151,33 @@ function App() {
       transition: { duration: 1, delay: 2.5 },
     },
   };
-  const userCard: ICard[] = [
-    { value: 6, suit: "hearts" },
-    { value: 3, suit: "blades" },
-    { value: 8, suit: "clubs" },
-  ];
-  const bot1Card: ICard[] = [
-    { value: 1, suit: "hearts" },
-    { value: 3, suit: "clubs" },
-    { value: 2, suit: "diamonds" },
-  ];
-  const bot2Card: ICard[] = [
-    { value: 4, suit: "hearts" },
-    { value: 7, suit: "blades" },
-    { value: 5, suit: "diamonds" },
-  ];
-  const bot3Card: ICard[] = [
-    { value: 8, suit: "hearts" },
-    { value: 4, suit: "blades" },
-    { value: 9, suit: "diamonds" },
-  ];
+  const getRandomCard = (max: number, min: number): number => {
+    const random: number = Math.floor(Math.random() * (max - min + 1)) + min;
+    return random;
+  };
+  const getCard = (cardList: ICard[]) => {
+    const suitList: string[] = ["clubs", "diamonds", "hearts", "spades"];
+    const value: number = getRandomCard(10, 1);
+    const suitIndex: number = getRandomCard(3, 0);
+    const newCard: ICard = {
+      value,
+      suit: suitList[suitIndex],
+    };
+    const includeCard = cardList.find((item) => {
+      return newCard.value === item.value && newCard.suit === item.suit;
+    });
+    if (includeCard) return;
+    cardList.push(newCard);
+  };
+  const cardList: ICard[] = [];
+
+  while (cardList.length < 12) {
+    getCard(cardList);
+  }
+  const userCard: ICard[] = cardList.slice(0, 3);
+  const bot1Card: ICard[] = cardList.slice(3, 6);
+  const bot2Card: ICard[] = cardList.slice(6, 9);
+  const bot3Card: ICard[] = cardList.slice(9);
   return (
     <div className="App">
       <MotionCard
