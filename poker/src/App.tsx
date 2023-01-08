@@ -222,6 +222,7 @@ function App() {
           <MotionCard
             key={index}
             belongTo="user"
+            initial={isFlipCard ? false : "initial"}
             isFlip={isFlipCard}
             variants={variant}
             animate={!isStart ? "initial" : "end"}
@@ -247,6 +248,7 @@ function App() {
           <MotionCard
             key={index}
             belongTo="bot1"
+            initial={isFlipCard ? false : "initial"}
             isFlip={isFlipCard}
             variants={variant}
             animate={!isStart ? "initial" : "end"}
@@ -261,10 +263,18 @@ function App() {
             : index === 2
             ? SECOND_BOT_ANIMATION_2
             : SECOND_BOT_ANIMATION_3;
+        // const arrAnimation = [
+        //   SECOND_BOT_ANIMATION_1,
+        //   SECOND_BOT_ANIMATION_2,
+        //   SECOND_BOT_ANIMATION_1,
+        // ];
+        // const variant = arrAnimation[index];
+
         return (
           <MotionCard
             key={index}
             belongTo="bot2"
+            initial={isFlipCard ? false : "initial"}
             isFlip={isFlipCard}
             variants={variant}
             animate={!isStart ? "initial" : "end"}
@@ -283,6 +293,7 @@ function App() {
           <MotionCard
             key={index}
             belongTo="bot3"
+            initial={isFlipCard ? false : "initial"}
             isFlip={isFlipCard}
             variants={variant}
             animate={!isStart ? "initial" : "end"}

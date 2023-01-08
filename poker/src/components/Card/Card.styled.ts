@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   position: relative;
   /* border: 1px solid #fff; */
   transform-style: preserve-3d;
-  transition: transform 0.2s;
+  transition: transform 2s;
   transition-timing-function: ease-in-out;
   transform: rotateY(
     ${(props: { flip: boolean }) => (props.flip ? "180deg" : "0")}
