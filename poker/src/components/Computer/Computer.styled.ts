@@ -2,8 +2,9 @@ import { Position } from "components/types/user.type";
 import styled, { css } from "styled-components";
 export const Container = styled.div`
   width: 150px;
-  height: 150px;
+  height: 100px;
   position: absolute;
+
   /* bottom: 20px;
   left: 45%; */
   ${(props: { position: Position }) => {
@@ -11,31 +12,32 @@ export const Container = styled.div`
       case "left":
         return css`
           top: 50%;
-          left: 10%;
+          left: 3%;
           transform: translateY(-50%);
         `;
       case "right":
         return css`
           top: 50%;
-          right: 10%;
+          right: 3%;
           transform: translateY(-50%);
           flex-direction: row-reverse;
         `;
       case "top":
         return css`
-          top: 1rem;
+          top: 0px;
           left: 50%;
           transform: translateX(-50%);
-          flex-direction: row-reverse;
+
+          /* flex-direction: row-reverse; */
         `;
 
       default:
         break;
     }
   }}
+
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
 `;
 export const Avatar = styled.img`

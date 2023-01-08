@@ -17,7 +17,7 @@ interface ICardUser {
   card?: ICard;
 }
 const Card = React.forwardRef(
-  ({ belongTo, isFlip = false, card = {} }: ICardUser, ref) => {
+  ({ belongTo, isFlip = false, card = {} }: ICardUser, ref: any) => {
     const { value, suit } = card;
     const suitCardImg =
       suit === "clubs"
@@ -31,7 +31,7 @@ const Card = React.forwardRef(
       suit === "hearts" || suit === "diamonds" ? "red" : "black";
     return (
       <Container ref={ref}>
-        <Wrapper>
+        <Wrapper flip={isFlip}>
           <FrontSide>
             <FrontSideWrapper color={color}>
               <CardValue>{value}</CardValue>

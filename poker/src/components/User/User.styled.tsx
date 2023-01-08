@@ -1,14 +1,14 @@
 import styled from "styled-components";
+import { Button } from "antd";
 export const Container = styled.div`
   width: 150px;
   height: 150px;
-  position: absolute;
-  bottom: 20px;
-  left: 45%;
-  /* background-color: pink; */
+  /* position: absolute;
+  bottom: -20px;
+  left: 45%; */
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 `;
 export const Avatar = styled.img`
@@ -24,3 +24,8 @@ export const Wrapper = styled.div`
 `;
 export const Name = styled.div``;
 export const Money = styled.div``;
+export const FlipCard = styled(Button)`
+  background-color: green;
+  margin-right: 10px;
+  font-weight: bold;
+`;

@@ -9,8 +9,8 @@ const User = ({ data }: IPropsUser) => {
     <Container>
       <Avatar src={data.avatar}></Avatar>
       <Wrapper>
-        <Name>Name:{data.name}</Name>
-        <Money>Money:{data.money}$</Money>
+        <Name>{data.name}</Name>
+        <Money>{data.money}$</Money>
       </Wrapper>
     </Container>
   );
